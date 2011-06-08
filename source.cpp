@@ -17,39 +17,39 @@ int main()
 	cout << "Length of an array is ";
 	cin >> size;
 	int *p= new int [size];
-	fill(p);
+	fill(&p[0]);
 	cout << "Input:" << endl;
-	show(p);
-	sort(p); 
+	show(&p[0]);
+	sort(&p[0]); 
 	cout << "Output:" << endl;
-	show(p);
+	show(&p[0]);
 	delete [] p;
 	cin.get();
 	cin.get();
 	return 0;
 }
 
-void fill(int *mas)
+void fill(int *arr)
 {
-	int *p=mas;
+	int *p=arr;
 	for (int i=0; i<size; ++i)
 		{
 		*(p+i)=rand()%10;
 		}
 }
 
-void show(int *mas)
+void show(int *arr)
 {
-	int *p=mas;
+	int *p=arr;
 	for (int i=0; i<size; ++i)
 		{
 		cout << *(p+i) << endl;
 		}
 }
 
-void sort(int *mas) 
+void sort(int *arr) 
 {
-	int *p=mas;
+	int *p=arr;
 	for (int i=0; i<size; ++i)
 		for (int k=0; k<(size-1); ++k)
 			if (*(p+k)>*(p+k+1))
